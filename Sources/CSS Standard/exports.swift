@@ -7,5 +7,7 @@
 
 // Note: All types from W3C CSS are available directly through the re-export
 // For migration from swift-css-types:
-// - CSSTypes, CSSPropertyTypes, CSSTypeTypes → use types from W3C_CSS directly
+// - CSSTypes, CSSPropertyTypes, CSS_Standard → use types from W3C_CSS directly
 // - All CSS properties, values, and types are available through this import
+
+public typealias Color = W3C_CSS_Color.Color

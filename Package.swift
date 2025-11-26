@@ -1,4 +1,4 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 6.2
 
 import PackageDescription
 
@@ -16,19 +16,10 @@ let package = Package(
         .library(
             name: "CSS Standard",
             targets: ["CSS Standard"]
-        ),
-        // Compatibility products for gradual migration from swift-css-types
-        .library(
-            name: "CSS Standard Properties",
-            targets: ["CSS Standard Properties"]
-        ),
-        .library(
-            name: "CSS Standard AtRules",
-            targets: ["CSS Standard AtRules"]
         )
     ],
     dependencies: [
-        .package(path: "../swift-w3c-css")
+        .package(url: "https://github.com/swift-standards/swift-w3c-css", from: "0.1.0")
     ],
     targets: [
         // Main umbrella target - re-exports everything
@@ -38,23 +29,6 @@ let package = Package(
                 .product(name: "W3C CSS", package: "swift-w3c-css")
             ]
         ),
-
-        // Compatibility target for CSS properties
-        .target(
-            name: "CSS Standard Properties",
-            dependencies: [
-                .product(name: "W3C CSS", package: "swift-w3c-css")
-            ]
-        ),
-
-        // Compatibility target for CSS at-rules
-        .target(
-            name: "CSS Standard AtRules",
-            dependencies: [
-                .product(name: "W3C CSS", package: "swift-w3c-css")
-            ]
-        ),
-
         .testTarget(
             name: "CSS Standard Tests",
             dependencies: ["CSS Standard"]

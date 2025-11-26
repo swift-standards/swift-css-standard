@@ -39,21 +39,6 @@ let url = Url("images/background.png")
 let ident = CustomIdent("my-animation")
 ```
 
-### Granular Imports
-
-For specific use cases, you can import individual modules:
-
-```swift
-// For CSS properties
-import CSS_Standard_Properties
-
-// For CSS types (colors, lengths, etc.)
-import CSS_Standard
-
-// For CSS at-rules (@media, @keyframes, etc.)
-import CSS_Standard_AtRules
-```
-
 ## What's Included
 
 This package re-exports all modules from [swift-w3c-css](https://github.com/swift-standards/swift-w3c-css):
