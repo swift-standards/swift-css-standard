@@ -11,3 +11,7 @@
 // - All CSS properties, values, and types are available through this import
 
 public typealias Color = W3C_CSS_Color.Color
+
+extension Color {
+    public typealias Value = W3C_CSS_Values.Color
+}
