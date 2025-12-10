@@ -5,11 +5,11 @@ import PackageDescription
 let package = Package(
     name: "swift-css-standard",
     platforms: [
-        .macOS(.v15),
-        .iOS(.v18),
-        .tvOS(.v18),
-        .watchOS(.v11),
-        .macCatalyst(.v18)
+        .macOS(.v26),
+        .iOS(.v26),
+        .tvOS(.v26),
+        .watchOS(.v26),
+        .visionOS(.v26),
     ],
     products: [
         // Main umbrella product
@@ -19,14 +19,16 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-w3c-css", from: "0.1.0"),
+        .package(url: "https://github.com/swift-standards/swift-w3c-css", from: "0.2.0"),
+        .package(url: "https://github.com/swift-standards/swift-iec-61966", from: "0.2.0"),
     ],
     targets: [
         // Main umbrella target - re-exports everything
         .target(
             name: "CSS Standard",
             dependencies: [
-                .product(name: "W3C CSS", package: "swift-w3c-css")
+                .product(name: "W3C CSS", package: "swift-w3c-css"),
+                .product(name: "IEC 61966", package: "swift-iec-61966"),
             ]
         ),
         .testTarget(

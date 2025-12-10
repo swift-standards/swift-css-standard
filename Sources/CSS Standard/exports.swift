@@ -1,8 +1,9 @@
 // CSS Standard.swift
 // CSS Standard
 //
-// Main umbrella module re-exporting W3C CSS
+// Main umbrella module re-exporting W3C CSS and IEC 61966 (sRGB)
 
+@_exported import IEC_61966
 @_exported import W3C_CSS
 
 // Note: All types from W3C CSS are available directly through the re-export
