@@ -19,7 +19,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-w3c-css", from: "0.1.2"),
+        .package(url: "https://github.com/swift-standards/swift-w3c-css", from: "0.2.1"),
         .package(url: "https://github.com/swift-standards/swift-iec-61966", from: "0.1.0"),
     ],
     targets: [
