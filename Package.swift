@@ -21,6 +21,7 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/swift-standards/swift-w3c-css", from: "0.3.0"),
         .package(url: "https://github.com/swift-standards/swift-iec-61966", from: "0.1.3"),
+        .package(url: "https://github.com/swift-standards/swift-color-standard", from: "0.1.0"),
     ],
     targets: [
         // Main umbrella target - re-exports everything
@@ -29,6 +30,7 @@ let package = Package(
             dependencies: [
                 .product(name: "W3C CSS", package: "swift-w3c-css"),
                 .product(name: "IEC 61966", package: "swift-iec-61966"),
+                .product(name: "Color Standard", package: "swift-color-standard"),
             ]
         ),
         .testTarget(

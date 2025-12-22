@@ -4,6 +4,7 @@
 // This file bridges W3C CSS Color values with IEC 61966-2-1 sRGB,
 // the standard color space that CSS rgb() operates in.
 
+public import Color_Standard
 public import IEC_61966
 import RFC_4648
 public import W3C_CSS_Values
@@ -26,6 +27,10 @@ extension IEC_61966.`2`.`1`.sRGB {
     /// - `.hwb(Hue, Double, Double)` - HWB to RGB conversion
     /// - `.hex(HexColor)` - Hex to RGB conversion
     /// - `.named(NamedColor)` - Named color to RGB conversion
+    /// - `.lab(Double, Double, Double)` - CIE LAB to sRGB via Color hub
+    /// - `.lch(Double, Double, Double)` - CIE LCH to sRGB via Color hub
+    /// - `.oklab(Double, Double, Double)` - Oklab to sRGB via Color hub
+    /// - `.oklch(Double, Double, Double)` - Oklch to sRGB via Color hub
     ///
     /// ## Reference
     ///
@@ -68,8 +73,28 @@ extension IEC_61966.`2`.`1`.sRGB {
                 return nil
             }
 
-        case .lab, .lch, .oklab, .oklch, .mix, .system, .currentColor, .transparent:
-            // These require more complex color space conversions
+        case .lab(let l, let a, let b):
+            // Convert LAB to sRGB via Color hub
+            let lab = Color_Standard.Color.LAB(l: l, a: a, b: b)
+            self = lab.converted(to: Self.self)
+
+        case .lch(let l, let c, let h):
+            // Convert LCH to sRGB via Color hub
+            let lch = Color_Standard.Color.LCH(l: l, c: c, h: h)
+            self = lch.converted(to: Self.self)
+
+        case .oklab(let l, let a, let b):
+            // Convert Oklab to sRGB via Color hub
+            let oklab = Color_Standard.Color.Oklab(l: l, a: a, b: b)
+            self = oklab.converted(to: Self.self)
+
+        case .oklch(let l, let c, let h):
+            // Convert Oklch to sRGB via Color hub
+            let oklch = Color_Standard.Color.Oklch(l: l, c: c, h: h)
+            self = oklch.converted(to: Self.self)
+
+        case .mix, .system, .currentColor, .transparent:
+            // These are context-dependent or require runtime color mixing
             return nil
         }
     }
