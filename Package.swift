@@ -19,9 +19,9 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/swift-standards/swift-w3c-css.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-standards/swift-iec-61966.git", from: "0.0.1"),
-        .package(url: "https://github.com/swift-standards/swift-color-standard.git", from: "0.0.1"),
+        .package(path: "../swift-w3c-css"),
+        .package(path: "../swift-iec-61966"),
+        .package(path: "../swift-color-standard"),
     ],
     targets: [
         // Main umbrella target - re-exports everything
