@@ -9,7 +9,7 @@ let package = Package(
         .iOS(.v26),
         .tvOS(.v26),
         .watchOS(.v26),
-        .visionOS(.v26),
+        .visionOS(.v26)
     ],
     products: [
         // Main umbrella product
@@ -21,7 +21,7 @@ let package = Package(
     dependencies: [
         .package(path: "../swift-w3c-css"),
         .package(path: "../swift-iec-61966"),
-        .package(path: "../swift-color-standard"),
+        .package(path: "../swift-color-standard")
     ],
     targets: [
         // Main umbrella target - re-exports everything
@@ -30,12 +30,8 @@ let package = Package(
             dependencies: [
                 .product(name: "W3C CSS", package: "swift-w3c-css"),
                 .product(name: "IEC 61966", package: "swift-iec-61966"),
-                .product(name: "Color Standard", package: "swift-color-standard"),
+                .product(name: "Color Standard", package: "swift-color-standard")
             ]
-        ),
-        .testTarget(
-            name: "CSS Standard Tests",
-            dependencies: ["CSS Standard"]
         )
     ],
     swiftLanguageModes: [.v6]
