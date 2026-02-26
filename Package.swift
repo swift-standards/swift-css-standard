@@ -32,7 +32,13 @@ let package = Package(
                 .product(name: "IEC 61966", package: "swift-iec-61966"),
                 .product(name: "Color Standard", package: "swift-color-standard")
             ]
-        )
+        ),
+        .testTarget(
+            name: "CSS Standard Tests",
+            dependencies: [
+                "CSS Standard",
+            ]
+        ),
     ],
     swiftLanguageModes: [.v6]
 )
@@ -44,6 +50,7 @@ for target in package.targets where ![.system, .binary, .plugin, .macro].contain
         .enableUpcomingFeature("ExistentialAny"),
         .enableUpcomingFeature("InternalImportsByDefault"),
         .enableUpcomingFeature("MemberImportVisibility"),
+        .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
         .enableExperimentalFeature("Lifetimes"),
         .enableExperimentalFeature("SuppressedAssociatedTypes"),
         .enableExperimentalFeature("SuppressedAssociatedTypesWithDefaults"),
