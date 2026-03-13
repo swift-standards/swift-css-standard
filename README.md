@@ -11,7 +11,7 @@ This package follows the same pattern as [swift-html-standard](https://github.co
 ## Features
 
 - ✅ **Complete W3C CSS Implementation**: Built on swift-w3c-css covering all major CSS specifications
-- ✅ **CSSOM Foundation**: Uses swift-cssom for spec-compliant serialization
+- ✅ **CSSOM Foundation**: Uses swift-w3c-cssom for spec-compliant serialization
 - ✅ **Type-Safe**: Leverages Swift's type system for compile-time CSS validation
 - ✅ **Modular**: Import only what you need or use the umbrella module
 - ✅ **Well-Documented**: Extensive inline documentation with spec references
@@ -94,7 +94,7 @@ The API surface is similar, but `swift-css-standard` provides:
 ```
 swift-css-standard (facade/umbrella)
     └── swift-w3c-css (implementation)
-        └── swift-cssom (foundation)
+        └── swift-w3c-cssom (foundation)
 ```
 
 This package is a thin wrapper that re-exports `swift-w3c-css`, providing:
@@ -110,7 +110,7 @@ This package is a thin wrapper that re-exports `swift-w3c-css`, providing:
 ## Related Packages
 
 - **[swift-w3c-css](https://github.com/swift-standards/swift-w3c-css)** - Comprehensive W3C CSS implementation (underlying implementation)
-- **[swift-cssom](https://github.com/swift-standards/swift-cssom)** - W3C CSSOM specification (foundation layer)
+- **[swift-w3c-cssom](https://github.com/swift-standards/swift-w3c-cssom)** - W3C CSSOM specification (foundation layer)
 - **[swift-html-standard](https://github.com/swift-standards/swift-html-standard)** - Unified HTML API (sister package)
 
 ## License
