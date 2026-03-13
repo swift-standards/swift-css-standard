@@ -19,8 +19,8 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(path: "../swift-w3c-css"),
-        .package(path: "../swift-iec-61966"),
+        .package(path: "../../swift-w3c/swift-w3c-css"),
+        .package(path: "../../swift-iec/swift-iec-61966"),
         .package(path: "../swift-color-standard")
     ],
     targets: [
