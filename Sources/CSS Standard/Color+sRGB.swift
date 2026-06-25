@@ -7,6 +7,7 @@
 public import Color_Standard
 public import IEC_61966
 import RFC_4648
+import Byte_Primitives
 public import W3C_CSS_Values
 
 // MARK: - sRGB from CSS Color
@@ -135,15 +136,17 @@ extension IEC_61966.`2`.`1`.sRGB {
         }
 
         // Decode using RFC 4648 Base16
-        guard let bytes = [UInt8](hexEncoded: expanded), bytes.count >= 3 else {
+        guard let bytes = [Byte](hexEncoded: expanded), bytes.count >= 3 else {
             self.init(r: 0, g: 0, b: 0)
             return
         }
 
+        // The decode hands back the byte-domain `[Byte]`; the channel math is
+        // arithmetic, so bridge `Byte → UInt8` via `.underlying` at this boundary.
         self.init(
-            r: Double(bytes[0]) / 255.0,
-            g: Double(bytes[1]) / 255.0,
-            b: Double(bytes[2]) / 255.0
+            r: Double(bytes[0].underlying) / 255.0,
+            g: Double(bytes[1].underlying) / 255.0,
+            b: Double(bytes[2].underlying) / 255.0
         )
     }
 
