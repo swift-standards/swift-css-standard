@@ -4,7 +4,7 @@ A unified facade for W3C CSS standards in Swift.
 
 ## Overview
 
-`swift-css-standard` provides a clean, unified API for working with CSS in Swift, built on top of the comprehensive [swift-w3c-css](https://github.com/swift-standards/swift-w3c-css) implementation.
+`swift-css-standard` provides a clean, unified API for working with CSS in Swift, built on top of the comprehensive [swift-w3c-css](https://github.com/swift-w3c/swift-w3c-css) implementation.
 
 This package follows the same pattern as [swift-html-standard](https://github.com/swift-standards/swift-html-standard), providing a single entry point for CSS functionality with optional granular imports for specific needs.
 
@@ -41,7 +41,7 @@ let ident = CustomIdent("my-animation")
 
 ## What's Included
 
-This package re-exports all modules from [swift-w3c-css](https://github.com/swift-standards/swift-w3c-css):
+This package re-exports all modules from [swift-w3c-css](https://github.com/swift-w3c/swift-w3c-css):
 
 ### Core Modules
 - CSSOM (serialization, strings, URLs, identifiers)
@@ -109,8 +109,8 @@ This package is a thin wrapper that re-exports `swift-w3c-css`, providing:
 
 ## Related Packages
 
-- **[swift-w3c-css](https://github.com/swift-standards/swift-w3c-css)** - Comprehensive W3C CSS implementation (underlying implementation)
-- **[swift-w3c-cssom](https://github.com/swift-standards/swift-w3c-cssom)** - W3C CSSOM specification (foundation layer)
+- **[swift-w3c-css](https://github.com/swift-w3c/swift-w3c-css)** - Comprehensive W3C CSS implementation (underlying implementation)
+- **[swift-w3c-cssom](https://github.com/swift-w3c/swift-w3c-cssom)** - W3C CSSOM specification (foundation layer)
 - **[swift-html-standard](https://github.com/swift-standards/swift-html-standard)** - Unified HTML API (sister package)
 
 ## License
