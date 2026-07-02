@@ -1,6 +1,6 @@
 # .github/metadata.yaml
 # Triaged by AI-assisted bulk pass (2026-04-29).
-description: "CSS standard wrapper combining W3C CSS specifications in Swift."
+description: "Unified facade over the W3C CSS specifications with CSSOM-based serialization for Swift."
 topics:
   - standards
   - css
