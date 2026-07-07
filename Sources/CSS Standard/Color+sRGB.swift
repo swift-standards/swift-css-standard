@@ -4,10 +4,10 @@
 // This file bridges W3C CSS Color values with IEC 61966-2-1 sRGB,
 // the standard color space that CSS rgb() operates in.
 
+import Byte_Primitives
 public import Color_Standard
 public import IEC_61966
 import RFC_4648
-import Byte_Primitives
 public import W3C_CSS_Values
 
 // MARK: - sRGB from CSS Color
