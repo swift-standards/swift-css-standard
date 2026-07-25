@@ -1,5 +1,7 @@
 # swift-css-standard
 
+![Development Status](https://img.shields.io/badge/status-active--development-blue.svg)
+
 A unified facade for W3C CSS standards in Swift.
 
 ## Overview
