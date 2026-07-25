@@ -28,6 +28,17 @@ dependencies: [
 ]
 ```
 
+Add the product to your target:
+
+```swift
+.target(
+    name: "App",
+    dependencies: [
+        .product(name: "CSS Standard", package: "swift-css-standard")
+    ]
+)
+```
+
 ## Usage
 
 ### Full Import (Recommended)
