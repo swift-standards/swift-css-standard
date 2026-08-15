@@ -127,10 +127,12 @@ extension IEC_61966.`2`.`1`.sRGB {
         case 3:  // RGB shorthand
             let chars = Array(value)
             expanded = "\(chars[0])\(chars[0])\(chars[1])\(chars[1])\(chars[2])\(chars[2])"
+
         case 4:  // RGBA shorthand
             let chars = Array(value)
             expanded =
                 "\(chars[0])\(chars[0])\(chars[1])\(chars[1])\(chars[2])\(chars[2])\(chars[3])\(chars[3])"
+
         default:
             expanded = value
         }
