@@ -1,15 +1,15 @@
-// swift-tools-version: 6.3.3
+// swift-tools-version: 6.4
 
 import PackageDescription
 
 let package = Package(
     name: "swift-css-standard",
     platforms: [
-        .macOS("27"),
-        .iOS("27"),
-        .tvOS("27"),
-        .watchOS("27"),
-        .visionOS("27")
+        .macOS(.v27),
+        .iOS(.v27),
+        .tvOS(.v27),
+        .watchOS(.v27),
+        .visionOS(.v27),
     ],
     products: [
         // Main umbrella product
@@ -21,8 +21,14 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/swift-w3c/swift-w3c-css.git", branch: "main"),
         .package(url: "https://github.com/swift-iec/swift-iec-61966.git", branch: "main"),
-        .package(url: "https://github.com/swift-standards/swift-color-standard.git", branch: "main"),
-        .package(url: "https://github.com/swift-primitives/swift-byte-primitives.git", branch: "main")
+        .package(
+            url: "https://github.com/swift-standards/swift-color-standard.git",
+            branch: "main"
+        ),
+        .package(
+            url: "https://github.com/swift-primitives/swift-byte-primitives.git",
+            branch: "main"
+        ),
     ],
     targets: [
         // Main umbrella target - re-exports everything
@@ -32,13 +38,13 @@ let package = Package(
                 .product(name: "W3C CSS", package: "swift-w3c-css"),
                 .product(name: "IEC 61966", package: "swift-iec-61966"),
                 .product(name: "Color Standard", package: "swift-color-standard"),
-                .product(name: "Byte Primitives", package: "swift-byte-primitives")
+                .product(name: "Byte Primitives", package: "swift-byte-primitives"),
             ]
         ),
         .testTarget(
             name: "CSS Standard Tests",
             dependencies: [
-                "CSS Standard",
+                "CSS Standard"
             ]
         ),
     ],
