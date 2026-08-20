@@ -6,7 +6,7 @@
 
 import Byte_Primitives
 public import Color_Standard
-public import IEC_61966
+import IEC_61966
 import RFC_4648
 public import W3C_CSS_Values
 
