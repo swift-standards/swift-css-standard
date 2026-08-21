@@ -12,7 +12,7 @@ let package = Package(
         .visionOS(.v27),
     ],
     products: [
-        // Main umbrella product
+
         .library(
             name: "CSS Standard",
             targets: ["CSS Standard"]
@@ -31,7 +31,7 @@ let package = Package(
         ),
     ],
     targets: [
-        // Main umbrella target - re-exports everything
+
         .target(
             name: "CSS Standard",
             dependencies: [
@@ -51,7 +51,6 @@ let package = Package(
     swiftLanguageModes: [.v6]
 )
 
-// Apply Swift language features
 for target in package.targets where ![.system, .binary, .plugin, .macro].contains(target.type) {
     let ecosystem: [SwiftSetting] = [
         .strictMemorySafety(),
