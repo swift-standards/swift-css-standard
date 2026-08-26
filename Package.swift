@@ -26,7 +26,7 @@ let package = Package(
             branch: "main"
         ),
         .package(
-            url: "https://github.com/swift-primitives/swift-byte-primitives.git",
+            url: "https://github.com/swift-molecules/swift-byte.git",
             branch: "main"
         ),
     ],
@@ -38,7 +38,7 @@ let package = Package(
                 .product(name: "W3C CSS", package: "swift-w3c-css"),
                 .product(name: "IEC 61966", package: "swift-iec-61966"),
                 .product(name: "Color Standard", package: "swift-color-standard"),
-                .product(name: "Byte Primitives", package: "swift-byte-primitives"),
+                .product(name: "Byte", package: "swift-byte"),
             ]
         ),
         .testTarget(

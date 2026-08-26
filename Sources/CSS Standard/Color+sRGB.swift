@@ -1,4 +1,4 @@
-import Byte_Primitives
+import Byte
 public import Color_Standard
 import IEC_61966
 import RFC_4648
