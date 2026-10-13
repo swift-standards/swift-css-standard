@@ -6,7 +6,7 @@ public import W3C_CSS_Values
 
 extension IEC_61966.`2`.`1`.sRGB {
 
-    public init?(_ color: W3C_CSS_Values.Color) {
+    public init?(_ color: W3C_CSS_Values::Color) {
         switch color {
         case .rgb(let r, let g, let b):
             self.init(
@@ -45,22 +45,22 @@ extension IEC_61966.`2`.`1`.sRGB {
 
         case .lab(let l, let a, let b):
 
-            let lab = Color_Standard.Color.LAB(l: l, a: a, b: b)
+            let lab = Color_Standard::Color.LAB(l: l, a: a, b: b)
             self = lab.converted(to: Self.self)
 
         case .lch(let l, let c, let h):
 
-            let lch = Color_Standard.Color.LCH(l: l, c: c, h: h)
+            let lch = Color_Standard::Color.LCH(l: l, c: c, h: h)
             self = lch.converted(to: Self.self)
 
         case .oklab(let l, let a, let b):
 
-            let oklab = Color_Standard.Color.Oklab(l: l, a: a, b: b)
+            let oklab = Color_Standard::Color.Oklab(l: l, a: a, b: b)
             self = oklab.converted(to: Self.self)
 
         case .oklch(let l, let c, let h):
 
-            let oklch = Color_Standard.Color.Oklch(l: l, c: c, h: h)
+            let oklch = Color_Standard::Color.Oklch(l: l, c: c, h: h)
             self = oklch.converted(to: Self.self)
 
         case .mix, .system, .currentColor, .transparent:
@@ -69,7 +69,7 @@ extension IEC_61966.`2`.`1`.sRGB {
         }
     }
 
-    public init(_ hex: W3C_CSS_Values.HexColor) {
+    public init(_ hex: W3C_CSS_Values::HexColor) {
         let value =
             hex.value.hasPrefix("#")
             ? String(hex.value.dropFirst())
@@ -102,13 +102,13 @@ extension IEC_61966.`2`.`1`.sRGB {
         )
     }
 
-    public init?(_ named: W3C_CSS_Values.NamedColor) {
+    public init?(_ named: W3C_CSS_Values::NamedColor) {
         guard let srgb = named.sRGB else { return nil }
         self = srgb
     }
 }
 
-extension W3C_CSS_Values.Color {
+extension W3C_CSS_Values::Color {
 
     public init(_ srgb: IEC_61966.`2`.`1`.sRGB) {
         self = .rgb(
@@ -145,7 +145,7 @@ extension W3C_CSS_Values.Color {
     }
 }
 
-extension W3C_CSS_Values.Color {
+extension W3C_CSS_Values::Color {
 
     public typealias sRGB = IEC_61966.`2`.`1`.sRGB
 }
