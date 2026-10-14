@@ -4,7 +4,7 @@ import IEC_61966
 import RFC_4648
 public import W3C_CSS_Values
 
-extension IEC_61966.`2`.`1`.sRGB {
+extension IEC_61966.`2`.`1`.SRGB {
 
     public init?(_ color: W3C_CSS_Values::Color) {
         switch color {
@@ -110,7 +110,7 @@ extension IEC_61966.`2`.`1`.sRGB {
 
 extension W3C_CSS_Values::Color {
 
-    public init(_ srgb: IEC_61966.`2`.`1`.sRGB) {
+    public init(_ srgb: IEC_61966.`2`.`1`.SRGB) {
         self = .rgb(
             Int((srgb.r * 255).rounded()),
             Int((srgb.g * 255).rounded()),
@@ -147,5 +147,5 @@ extension W3C_CSS_Values::Color {
 
 extension W3C_CSS_Values::Color {
 
-    public typealias sRGB = IEC_61966.`2`.`1`.sRGB
+    public typealias sRGB = IEC_61966.`2`.`1`.SRGB
 }
