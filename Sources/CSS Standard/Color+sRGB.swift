@@ -37,11 +37,10 @@ extension IEC_61966.`2`.`1`.SRGB {
             self.init(hex)
 
         case .named(let named):
-            if let srgb = Self(named) {
-                self = srgb
-            } else {
+            guard let srgb = Self(named) else {
                 return nil
             }
+            self = srgb
 
         case .lab(let l, let a, let b):
 
