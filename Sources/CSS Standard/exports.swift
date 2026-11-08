@@ -1,5 +1,5 @@
-@_exported import IEC_61966
-@_exported import W3C_CSS
+@_exported public import IEC_61966
+@_exported public import W3C_CSS
 
 @_exported public import enum W3C_CSS_Shared.W3C_CSS
 
