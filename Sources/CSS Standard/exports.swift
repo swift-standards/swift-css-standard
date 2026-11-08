@@ -9,4 +9,4 @@ extension Color {
     public typealias Value = W3C_CSS_Values.Color
 }
 
-public typealias CSS = W3C_CSS_Shared.W3C_CSS
+public typealias CSS = W3C_CSS_Shared::W3C_CSS
