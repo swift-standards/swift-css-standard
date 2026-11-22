@@ -16,21 +16,21 @@ extension `Basic Tests` {
 
             @Test func `can create CSSOM types`() {
 
-                let str = CSSString("test")
+                let str = W3C.CSSOM.String("test")
                 #expect(str.description == "\"test\"")
 
-                let url = Url("path/to/file.jpg")
+                let url = W3C.CSSOM.Url("path/to/file.jpg")
                 #expect(url.description == "url(\"path/to/file.jpg\")")
             }
 
             @Test func `can create identifier types`() {
-                let ident = Ident("block")
+                let ident = W3C.CSSOM.Ident("block")
                 #expect(ident.description == "block")
 
-                let customIdent = CustomIdent("my-animation")
+                let customIdent = W3C.CSSOM.CustomIdent("my-animation")
                 #expect(customIdent.description == "my-animation")
 
-                let dashedIdent = W3C_CSSOM.DashedIdent("primary-color")
+                let dashedIdent = W3C.CSSOM.DashedIdent("primary-color")
                 #expect(dashedIdent.description == "--primary-color")
             }
         }
