@@ -4,7 +4,7 @@ import IEC_61966
 import RFC_4648
 public import W3C_CSS_Values
 
-extension IEC_61966.`2`.`1`.SRGB {
+extension IEC.`61966`.`2`.`1`.SRGB {
 
     public init?(_ color: W3C_CSS_Values::Color) {
         switch color {
@@ -109,7 +109,7 @@ extension IEC_61966.`2`.`1`.SRGB {
 
 extension W3C_CSS_Values::Color {
 
-    public init(_ srgb: IEC_61966.`2`.`1`.SRGB) {
+    public init(_ srgb: IEC.`61966`.`2`.`1`.SRGB) {
         self = .rgb(
             Int((srgb.r * 255).rounded()),
             Int((srgb.g * 255).rounded()),
@@ -118,9 +118,9 @@ extension W3C_CSS_Values::Color {
     }
 
     public static func hsl(
-        hue: IEC_61966.`2`.`1`.Hue,
-        saturation: IEC_61966.`2`.`1`.Saturation,
-        lightness: IEC_61966.`2`.`1`.Lightness
+        hue: IEC.`61966`.`2`.`1`.Hue,
+        saturation: IEC.`61966`.`2`.`1`.Saturation,
+        lightness: IEC.`61966`.`2`.`1`.Lightness
     ) -> Color {
 
         .hsl(
@@ -131,9 +131,9 @@ extension W3C_CSS_Values::Color {
     }
 
     public static func hwb(
-        hue: IEC_61966.`2`.`1`.Hue,
-        whiteness: IEC_61966.`2`.`1`.Whiteness,
-        blackness: IEC_61966.`2`.`1`.Blackness
+        hue: IEC.`61966`.`2`.`1`.Hue,
+        whiteness: IEC.`61966`.`2`.`1`.Whiteness,
+        blackness: IEC.`61966`.`2`.`1`.Blackness
     ) -> Color {
 
         .hwb(
@@ -146,5 +146,5 @@ extension W3C_CSS_Values::Color {
 
 extension W3C_CSS_Values::Color {
 
-    public typealias sRGB = IEC_61966.`2`.`1`.SRGB
+    public typealias sRGB = IEC.`61966`.`2`.`1`.SRGB
 }
