@@ -62,7 +62,7 @@ extension IEC.`61966`.`2`.`1`.SRGB {
             let oklch = Color_Standard::Color.Oklch(l: l, c: c, h: h)
             self = oklch.converted(to: Self.self)
 
-        case .mix, .system, .currentColor, .transparent:
+        case .mix, .system, .currentColor, .transparent, .variable:
 
             return nil
         }
